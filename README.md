@@ -13,6 +13,53 @@
 > 优先级队列：std::multimap，即按 fScore（节点总代价）排序
 
 
+## 操作回顾
+
+- 下载与编译工程：
+
+  > 创建ros工作空间目录与功能包目录：
+  >
+  > > ```bash
+  > > mkdir -p ~/slam_ws/src
+  > > # 将hw/src中的三个文件夹复制到/slam_ws/src路径下
+  > > # 直接编译会存在一些或由于编译环境不同导致的的报错，需要修改一些配置
+  > > gedit ~/slam_ws/src
+  > > gedit ~/slam_ws/src/grid_path_searcher/src/demo_node.cpp
+  > > # 检索world-> 将107行的/world修改为world->保存->关闭
+  > > gedit ~/slam_ws/src/grid_path_searcher/CMakeLists.txt
+  > > # 将第29行的C++11修改为C++14->保存->关闭
+  > > ```
+  >
+  > 初始化工作空间：
+  >
+  > > ```bash
+  > > cd ~/slam_ws/src
+  > > catkin_init_workspace
+  > > ```
+  >
+  > 编译工作空间：
+  >
+  > > ```bash
+  > > cd ~/slam_ws/
+  > > catkin_make
+  > > ```
+  >
+  > 配置环境变量：
+  >
+  > > ```bash
+  > > echo "source ~/slam_ws/devel/setup.bash" >> ~/.bashrc
+  > > source ~/.bashrc
+  > > ```
+
+- 运行工程
+
+  > ```bash
+  > # 新建第一个终端(键入Ctrl+Alt+T)
+  > roscore
+  > # 新建第二个终端
+  > roslaunch grid_path_searcher demo.launch
+  > ```
+
 
 ## RViz 可视化结果截图：
 
@@ -140,86 +187,3 @@
 
 - JPS 与 A* 在不同地图条件下的效率对比如表5所示，在简单直连的路径中（运行次数3和运行次数5），A\*算法较于JPS算法的时间消耗更底；在相对复杂的路径中，JPS算法较于A\*算法时间消耗更低。JPS算法整体路径成本与访问节点数量相较于A\*算法更低。
 
-
-## 操作回顾
-
-- 下载与编译工程：
-
-  > 创建ros工作空间目录与功能包目录：
-  >
-  > > ```bash
-  > > mkdir -p ~/slam_ws/src
-  > > # 将hw/src中的三个文件夹复制到/slam_ws/src路径下
-  > > # 直接编译会存在一些或由于编译环境不同导致的的报错，需要修改一些配置
-  > > gedit ~/slam_ws/src
-  > > gedit ~/slam_ws/src/grid_path_searcher/src/demo_node.cpp
-  > > # 检索world-> 将107行的/world修改为world->保存->关闭
-  > > gedit ~/slam_ws/src/grid_path_searcher/CMakeLists.txt
-  > > # 将第29行的C++11修改为C++14->保存->关闭
-  > > ```
-  >
-  > 初始化工作空间：
-  >
-  > > ```bash
-  > > cd ~/slam_ws/src
-  > > catkin_init_workspace
-  > > ```
-  >
-  > 编译工作空间：
-  >
-  > > ```bash
-  > > cd ~/slam_ws/
-  > > catkin_make
-  > > ```
-  >
-  > 配置环境变量：
-  >
-  > > ```bash
-  > > echo "source ~/slam_ws/devel/setup.bash" >> ~/.bashrc
-  > > source ~/.bashrc
-  > > ```
-
-- 运行工程
-
-  > ```bash
-  > # 新建第一个终端(键入Ctrl+Alt+T)
-  > roscore
-  > # 新建第二个终端
-  > roslaunch grid_path_searcher demo.launch
-  > ```
-
-
-## 建立git工具
-
-> ```bash
-> # 下载并安装 Git
-> sudo apt-get install git
-> 
-> # 配置github
-> git config --global user.name "Y-Serein"
-> git config --global user.email "2034"
-> 
-> # 项目目录初始化:若未创建项目->git init SLAM
-> git init
-> 
-> # 加入上行索引
-> git add .
-> 
-> # 编写上行注释
-> git commit -m "Mrmp_01"
-> 
-> # 连接Github仓库
-> git remote add origin https://github.com/Y-Serein/Mrmp_ys.git
-> 
-> # 将本地文件推送到Github
-> git push origin Mrmp-1.0.1
-> 
-> # 输入ID
-> Y-Serein
-> 
-> # 输出密码(现在上传要输入秘钥，获取方式：github-> settings(右上角个人)-> Developer settings(左侧最下面)-> Personal access tokens（个人访问Tokens）->Generate new token（生成新Tokens）->设置名称，token过期日期，以及权限(个人可全选))
-> ***********************
-> 
-> ```
->
-> 
