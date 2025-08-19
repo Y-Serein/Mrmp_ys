@@ -64,63 +64,48 @@
 
 > ![image-20250724115217357](Image_ys/image-20250724115217357.png)
 
-## 上传git
 
-- 建立git工具
+## 建立git工具
 
-  > 下载并安装 Git：
-  >
-  > > sudo apt-get install git
-  >
-  > 配置github
-  >
-  > > git config --global user.name "Y-Serein"
-  > > git config --global user.email "2034"
-  >
-  > 建立本地仓库
-  >
-  > > 若已创建项目则在项目目录初始化
-  > >
-  > > > git init
-  > >
-  > > 若未创建项目
-  > >
-  > > > git init SLAM
-  > >
-  > > 若git初始化成功，终端输出： 
-  > >
-  > > > Initialized empty Git repository in /home/akshay/Mytest/.git/
-  >
-  > 新建一个仓库描述文件并编辑内容(可跳过)
-  >
-  > > gedit README
-  >
-  > 加入上行索引
-  >
-  > > git add .
-  >
-  > 编写上行注释
-  >
-  > > git commit -m "Mrmp_01"
-  >
-  > github上创建一个与本地仓库SLAM名称一样的项目create nw repository
-  >
-  > 连接Github仓库
-  >
-  > > git remote add origin https://github.com/Y-Serein/Mrmp_ys.git
-  >
-  > 将本地文件推送到Github
-  >
-  > > git push origin master
-  >
-  > 输入ID
-  >
-  > > Y-Serein
-  >
-  > 输出密码(首次上传要输入秘钥)
-  >
-  > > 获取方式
-  > >
-  > > github-> settings(右上角个人)-> Developer settings(左侧最下面)-> Personal access tokens（个人访问Tokens）->Generate new token（生成新Tokens）->设置名称，token过期日期，以及权限(个人可全选)。
-  >
-  > 上传成功
+> ```bash
+> # 下载并安装 Git
+> sudo apt-get install git
+> 
+> # 配置github
+> git config --global user.name "Y-Serein"
+> git config --global user.email "2034"
+> 
+> # 项目目录初始化:若未创建项目->git init SLAM
+> git init
+> 
+> # 加入上行索引
+> git add .
+> 
+> # 编写上行注释
+> git commit -m "Mrmp_01"
+> 
+> # 连接Github仓库
+> git remote add origin https://github.com/Y-Serein/Mrmp_ys.git
+> 
+> # 将本地文件推送到Github
+> git push origin Mrmp-1.0.1
+> 
+> # 输入ID
+> Y-Serein
+> 
+> # 输出密码(现在上传要输入秘钥，获取方式：github-> settings(右上角个人)-> Developer settings(左侧最下面)-> Personal access tokens（个人访问Tokens）->Generate new token（生成新Tokens）->设置名称，token过期日期，以及权限(个人可全选))
+> ***********************
+> 
+> ```
+
+## git项目管理
+
+> ```bash
+> # 查看分支
+> git branch -a
+> 
+> # 切换分支
+> git checkout branchName
+> 
+> # 创建新分支的同时切换到新的分支
+> git checkout -b newBranch
