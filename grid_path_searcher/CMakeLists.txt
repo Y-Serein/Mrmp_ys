@@ -30,14 +30,11 @@ set(CMAKE_CXX_FLAGS "-std=c++14 ${CMAKE_CXX_FLAGS} -O3 -Wall") # -Wextra -Werror
 
 add_executable( demo_node 
     src/demo_node.cpp
-    src/Astar_searcher.cpp
-    src/read_only/JPS_utils.cpp
-    src/read_only/JPS_searcher.cpp
-    )
+    src/hw_tool.cpp)
 
 target_link_libraries(demo_node 
     ${catkin_LIBRARIES}
-    ${PCL_LIBRARIES} 
+    ${PCL_LIBRARIES}
 )
 
 add_executable ( random_complex 
